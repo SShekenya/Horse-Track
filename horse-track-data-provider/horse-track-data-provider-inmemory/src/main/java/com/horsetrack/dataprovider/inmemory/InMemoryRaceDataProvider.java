@@ -3,24 +3,17 @@ package com.horsetrack.dataprovider.inmemory;
 import com.horsetrack.dataprovider.RaceDataProvider;
 import com.horsetrack.model.Race;
 
-import javax.enterprise.context.ApplicationScoped;
 import javax.enterprise.inject.Default;
 import javax.inject.Named;
 import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Comparator;
-import java.util.HashSet;
 import java.util.LinkedHashMap;
-import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Map;
-import java.util.Set;
 
 /**
  * Created by sergii.shekenya on 14.06.2015.
  */
 @Named
-@ApplicationScoped
 @Default
 public class InMemoryRaceDataProvider implements RaceDataProvider {
     private Map<Long, Race> races = new LinkedHashMap<Long, Race>();

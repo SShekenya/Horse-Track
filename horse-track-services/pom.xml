@@ -19,10 +19,16 @@
 
     <dependencies>
         <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <version>3.8.1</version>
-            <scope>test</scope>
+            <groupId>Horse-track</groupId>
+            <artifactId>horse-track-common</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>Horse-track</groupId>
+            <artifactId>horse-track-services-api</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>javax.enterprise</groupId>
+            <artifactId>cdi-api</artifactId>
         </dependency>
     </dependencies>
 </project>

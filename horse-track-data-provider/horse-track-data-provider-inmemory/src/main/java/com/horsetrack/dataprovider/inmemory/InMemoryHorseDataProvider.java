@@ -17,7 +17,6 @@ import java.util.*;
  * Created by sergii.shekenya on 14.06.2015.
  */
 @Named
-@ApplicationScoped
 @Default
 public class InMemoryHorseDataProvider implements HorseDataProvider {
     private static final Logger LOGGER = LoggerFactory.getLogger(InMemoryHorseDataProvider.class);

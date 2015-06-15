@@ -19,10 +19,16 @@
 
     <dependencies>
         <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <version>3.8.1</version>
-            <scope>test</scope>
+            <groupId>Horse-track</groupId>
+            <artifactId>horse-track-services</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>Horse-track</groupId>
+            <artifactId>horse-track-data-provider-inmemory</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.jboss.weld.se</groupId>
+            <artifactId>weld-se-core</artifactId>
         </dependency>
     </dependencies>
 </project>

@@ -14,7 +14,6 @@ import java.util.TreeSet;
  * Created by sergii.shekenya on 14.06.2015.
  */
 @Named
-@ApplicationScoped
 @Default
 public class InMemoryPayoutDataProvider implements PayoutDataProvider {
 
