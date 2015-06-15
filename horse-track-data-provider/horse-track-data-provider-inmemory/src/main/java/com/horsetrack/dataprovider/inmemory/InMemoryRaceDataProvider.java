@@ -27,12 +27,14 @@ public class InMemoryRaceDataProvider implements RaceDataProvider {
 
     @Override
     public void persist(Race race) {
-        if (race.getRaceId() != null && races.containsKey(race.getRaceId())) {
-            throw new IllegalArgumentException("The race with id " + race.getRaceId() + " is already exist");
+        if (race.getRaceId() != null) {
+            if (races.containsKey(race.getRaceId())) {
+                throw new IllegalArgumentException("The race with id " + race.getRaceId() + " is already exist");
+            } else {
+                race.setRaceId(getNextRaceId());
+            }
         }
-        if (race.getRaceId() == null) {
-            race.setRaceId(getNextRaceId());
-        }
+
         races.put(race.getRaceId(), race);
     }
 
