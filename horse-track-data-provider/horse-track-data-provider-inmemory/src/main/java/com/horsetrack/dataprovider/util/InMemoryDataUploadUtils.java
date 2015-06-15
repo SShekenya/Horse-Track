@@ -24,10 +24,9 @@ public final class InMemoryDataUploadUtils {
     public static Map<Long, Horse> uploadEntryHorses() throws IOException {
         Map<Long, Horse> result = new HashMap<Long, Horse>();
 
-        InputStream in = InMemoryDataUploadUtils.class.getClassLoader()
-                .getResourceAsStream("initial-horse-list");
+        InputStream in = InMemoryDataUploadUtils.class.getClassLoader().getResourceAsStream("initial-horse-list");
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(in));
-        String line = null;
+        String line;
         try {
             while ((line = bufferedReader.readLine()) != null) {
                 Horse horse = parseLineToHorseEntry(line);
@@ -48,7 +47,7 @@ public final class InMemoryDataUploadUtils {
             horse.setOdds(Long.valueOf(matcher.group(3)));
             return horse;
         } else {
-            throw new IllegalStateException("No match found");
+            throw new IllegalStateException("Initial horse list is not matching pattern");
         }
     }
 }

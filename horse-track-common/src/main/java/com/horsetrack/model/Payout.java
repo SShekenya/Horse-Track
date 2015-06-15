@@ -3,9 +3,13 @@ package com.horsetrack.model;
 /**
  * Created by sergii.shekenya on 14.06.2015.
  */
-public class Payout {
+public class Payout implements Comparable<Payout> {
     private Denomination denomination;
     private Integer inventory = 10;
+
+    public Payout(Denomination denomination) {
+        this.denomination = denomination;
+    }
 
     public Denomination getDenomination() {
         return denomination;
@@ -25,6 +29,11 @@ public class Payout {
 
     public void decreaseInventory() {
         inventory--;
+    }
+
+    @Override
+    public int compareTo(Payout o) {
+        return denomination.compareTo(o.denomination);
     }
 
     public static enum Denomination {
