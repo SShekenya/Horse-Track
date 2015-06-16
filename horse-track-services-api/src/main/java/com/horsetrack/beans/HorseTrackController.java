@@ -9,5 +9,5 @@ public interface HorseTrackController {
 
     public void startRace(Long winningHorseId);
 
-    public void betOnHorse(Long horseId, Long amount);
+    public Long betOnHorse(Long horseId, Long amount);
 }

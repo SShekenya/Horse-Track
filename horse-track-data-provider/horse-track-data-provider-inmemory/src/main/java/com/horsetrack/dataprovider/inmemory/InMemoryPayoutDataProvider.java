@@ -4,7 +4,6 @@ import com.horsetrack.dataprovider.PayoutDataProvider;
 import com.horsetrack.model.Payout;
 
 import javax.annotation.PostConstruct;
-import javax.enterprise.context.ApplicationScoped;
 import javax.enterprise.inject.Default;
 import javax.inject.Named;
 import java.util.Set;
@@ -13,6 +12,7 @@ import java.util.TreeSet;
 /**
  * Created by sergii.shekenya on 14.06.2015.
  */
+
 @Named
 @Default
 public class InMemoryPayoutDataProvider implements PayoutDataProvider {

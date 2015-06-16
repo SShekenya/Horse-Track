@@ -7,15 +7,18 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import javax.annotation.PostConstruct;
-import javax.enterprise.context.ApplicationScoped;
 import javax.enterprise.inject.Default;
 import javax.inject.Named;
 import java.io.IOException;
-import java.util.*;
+import java.util.HashSet;
+import java.util.Map;
+import java.util.Set;
+import java.util.TreeMap;
 
 /**
  * Created by sergii.shekenya on 14.06.2015.
  */
+
 @Named
 @Default
 public class InMemoryHorseDataProvider implements HorseDataProvider {

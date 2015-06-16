@@ -10,5 +10,7 @@ public class HorseTrackCliDriver {
     public static void main(String[] args) {
         HorseTrackController horseTrackController = WeldContext.INSTANCE.getBean(HorseTrackController.class);
         horseTrackController.restockPayouts();
+        horseTrackController.startRace(5L);
+        horseTrackController.betOnHorse(5L, 100L);
     }
 }

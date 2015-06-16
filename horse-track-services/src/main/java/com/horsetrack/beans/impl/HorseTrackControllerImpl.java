@@ -5,7 +5,6 @@ import com.horsetrack.beans.RaceService;
 import com.horsetrack.beans.RateService;
 import com.horsetrack.dataprovider.HorseDataProvider;
 import com.horsetrack.dataprovider.PayoutDataProvider;
-import com.horsetrack.dataprovider.RaceDataProvider;
 import com.horsetrack.model.Horse;
 
 import javax.enterprise.inject.Default;
@@ -20,9 +19,6 @@ import javax.inject.Named;
 public class HorseTrackControllerImpl implements HorseTrackController {
     @Inject
     private PayoutDataProvider payoutDataProvider;
-
-    @Inject
-    private RaceDataProvider raceDataProvider;
 
     @Inject
     private HorseDataProvider horseDataProvider;
@@ -45,9 +41,8 @@ public class HorseTrackControllerImpl implements HorseTrackController {
     }
 
     @Override
-    public void betOnHorse(Long horseId, Long amount) {
+    public Long betOnHorse(Long horseId, Long amount) {
         Horse horse = horseDataProvider.findById(horseId);
-        rateService.rateHorse(horse, amount);
+        return rateService.rateHorse(horse, amount);
     }
-
 }
