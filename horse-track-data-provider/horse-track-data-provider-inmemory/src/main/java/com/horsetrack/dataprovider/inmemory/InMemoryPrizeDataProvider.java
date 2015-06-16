@@ -18,7 +18,7 @@ public class InMemoryPrizeDataProvider implements PrizeDataProvider {
     private Map<Long, Prize> prizes = new LinkedHashMap<Long, Prize>();
 
     @Override
-    public Long persist(Prize prize) {
+    public void persist(Prize prize) {
         if (prize.getId() != null) {
             if (prizes.containsKey(prize.getId())) {
                 throw new IllegalArgumentException("The race with id " + prize.getId() + " is already exist");
@@ -28,7 +28,6 @@ public class InMemoryPrizeDataProvider implements PrizeDataProvider {
         }
 
         prizes.put(prize.getId(), prize);
-        return prize.getId();
     }
 
     @Override

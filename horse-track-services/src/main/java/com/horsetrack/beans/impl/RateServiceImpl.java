@@ -33,8 +33,9 @@ public class RateServiceImpl implements RateService {
         } else {
             prizeAmount = 0L;
         }
-
-        return prizeDataProvider.persist(buildNewPrize(prizeAmount));
+        Prize prize = buildNewPrize(prizeAmount);
+        prizeDataProvider.persist(prize);
+        return prize.getId();
     }
 
     private Prize buildNewPrize(Long amount) {
