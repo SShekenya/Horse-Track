@@ -33,13 +33,14 @@ public class RateServiceImpl implements RateService {
         } else {
             prizeAmount = 0L;
         }
-        Prize prize = buildNewPrize(prizeAmount);
+        Prize prize = buildNewPrize(prizeAmount, horse);
         prizeDataProvider.persist(prize);
         return prize.getId();
     }
 
-    private Prize buildNewPrize(Long amount) {
+    private Prize buildNewPrize(Long amount, Horse horse) {
         Prize prize = new Prize();
+        prize.setHorseId(horse.getId());
         prize.setAmount(amount);
         return prize;
     }

@@ -5,6 +5,7 @@ package com.horsetrack.model;
  */
 public class Prize {
     private Long id;
+    private Long horseId;
     private Long amount;
 
     public Long getId() {
@@ -13,6 +14,14 @@ public class Prize {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public Long getHorseId() {
+        return horseId;
+    }
+
+    public void setHorseId(Long horseId) {
+        this.horseId = horseId;
     }
 
     public Long getAmount() {

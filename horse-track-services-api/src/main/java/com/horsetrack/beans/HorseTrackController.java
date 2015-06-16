@@ -10,4 +10,6 @@ public interface HorseTrackController {
     public void startRace(Long winningHorseId);
 
     public Long betOnHorse(Long horseId, Long amount);
+
+    Object collectWinnings(Long winningId);
 }

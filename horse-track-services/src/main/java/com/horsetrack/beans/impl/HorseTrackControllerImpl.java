@@ -45,4 +45,9 @@ public class HorseTrackControllerImpl implements HorseTrackController {
         Horse horse = horseDataProvider.findById(horseId);
         return rateService.rateHorse(horse, amount);
     }
+
+    @Override
+    public Object collectWinnings(Long winningId) {
+        return null;
+    }
 }

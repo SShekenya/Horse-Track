@@ -1,10 +1,12 @@
 package com.horsetrack.beans.impl;
 
 import com.horsetrack.beans.RaceService;
+import com.horsetrack.dataprovider.HorseDataProvider;
 import com.horsetrack.dataprovider.RaceDataProvider;
 import com.horsetrack.model.Horse;
 import com.horsetrack.model.Race;
 
+import javax.annotation.PostConstruct;
 import javax.inject.Inject;
 
 /**
@@ -14,6 +16,14 @@ public class RaceServiceImpl implements RaceService {
 
     @Inject
     private RaceDataProvider raceDataProvider;
+
+    @Inject
+    private HorseDataProvider horseDataProvider;
+
+    @PostConstruct
+    private void init() {
+        startRace(horseDataProvider.findById(1L));
+    }
 
     @Override
     public void startRace(Horse winningHorse) {
